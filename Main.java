@@ -47,9 +47,32 @@ class Trial
         long endTime=System.nanoTime();
         System.out.println("Time taken by Binary Search Algorithm is "+(endTime-startTime)/1_000_000.0+"ms");
     }
+    public void linearSearch(int arr[],int s)
+    {
+        long startTime=System.nanoTime();
+        int index=-1;
+        System.out.println("Searching using Linear Search Algorithm");
+        for(int i=0;i<arr.length-1;i++)
+        {
+            if(arr[i]==s)
+            {
+                index=i;
+            }
+        }
+        if(index>0)
+        {
+            System.out.println("Element found at index : "+index);
+
+        }
+        else{
+            System.out.println("Element not found");
+        }
+        long endTime=System.nanoTime();
+        System.out.println("Time taken by Linear Search Algorithm is "+(endTime-startTime)/1_000_000+"ms");
+    }
 }
 
-public class Arrays {
+public class Main {
 
     public static void main(String[] args) {
         Scanner ab = new Scanner(System.in);
@@ -68,6 +91,7 @@ public class Arrays {
         Trial obj1=new Trial();
         obj1.Search(arr,key);
         obj1.binarySearch(arr, key);
+        obj1.linearSearch(arr, key);
         ab.close();
     }
 }
